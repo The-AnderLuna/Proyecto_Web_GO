@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscar Curso</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Buscar Curso</h1>
+        {{if .Error}}
+            <p class="error">{{.Error}}</p>
+        {{end}}
+        {{if .Curso}}
+            <h2>Curso Encontrado:</h2>
+            <p>ID: {{.Curso.ID}}</p>
+            <p>Nombre: {{.Curso.Nombre}}</p>
+            <p>Descripción: {{.Curso.Descripcion}}</p>
+            <p>Duración (Horas): {{.Curso.DuracionHoras}}</p>
+            <p>Fecha de Creación: {{.Curso.FechaCreacion}}</p>
+            <p>Fecha de Actualización: {{.Curso.FechaActualizacion}}</p>
+        {{end}}
+        <form action="/curso/search" method="post">
+            <div class="form-group">
+                <label for="id">ID:</label>
+                <input type="text" id="id" name="id" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Eliminar Curso</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Eliminar Curso</h1>
+        {{if .Error}}
+            <p class="error">{{.Error}}</p>
+        {{end}}
+        {{if .Message}}
+            <p class="success">{{.Message}}</p>
+        {{end}}
+        <form action="/curso/delete" method="post">
+            <div class="form-group">
+                <label for="id">ID:</label>
+                <input type="text" id="id" name="id" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+        </form>
+    </div>
+</body>
+</html>

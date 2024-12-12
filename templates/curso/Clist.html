@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Cursos</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Cursos</h1>
+        {{if .Error}}
+            <p class="error">{{.Error}}</p>
+        {{end}}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Duración (Horas)</th>
+                    <th>Fecha de Creación</th>
+                    <th>Fecha de Actualización</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{range .Cursos}}
+                <tr>
+                    <td>{{.ID}}</td>
+                    <td>{{.Nombre}}</td>
+                    <td>{{.Descripcion}}</td>
+                    <td>{{.DuracionHoras}}</td>
+                    <td>{{.FechaCreacion}}</td>
+                    <td>{{.FechaActualizacion}}</td>
+                </tr>
+                {{else}}
+                <tr>
+                    <td colspan="6">No se encontraron cursos.</td>
+                </tr>
+                {{end}}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

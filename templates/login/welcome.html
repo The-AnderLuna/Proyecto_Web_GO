@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenido</title>
+    <link rel="stylesheet" href="/css/welcome.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenido, {{.Nombre}}</h1>
+        <p>Elige una opción:</p>
+        <div class="btn-group-vertical">
+            <a href="/usuario" class="btn btn-primary">Gestionar Usuarios</a>
+            <a href="/curso" class="btn btn-primary">Gestionar Cursos</a>
+            <a href="/logout" class="btn btn-danger">Cerrar Sesión</a>
+        </div>
+    </div>
+</body>
+</html>

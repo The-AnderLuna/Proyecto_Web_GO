@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscar Usuario</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Buscar Usuario</h1>
+
+        {{if .Error}}
+        <p class="error">{{.Error}}</p>
+        {{end}}
+
+        {{if .Usuario}}
+        <div class="usuario-info">
+            <p><strong>ID:</strong> {{.Usuario.ID}}</p>
+            <p><strong>Nombre:</strong> {{.Usuario.Nombre}}</p>
+            <p><strong>Apellidos:</strong> {{.Usuario.Apellidos}}</p>
+            <p><strong>Email:</strong> {{.Usuario.Email}}</p>
+            <p><strong>Teléfono:</strong> {{.Usuario.Telefono}}</p>
+            <p><strong>Rol:</strong> {{.Usuario.Rol}}</p>
+            <p><strong>Estado:</strong> {{.Usuario.Estado}}</p>
+            <p><strong>Fecha de Registro:</strong> {{.Usuario.FechaRegistro}}</p>
+        </div>
+        {{else}}
+        <form action="/usuario/search" method="get">
+            <div class="form-group">
+                <label for="search_email">Correo Electrónico:</label>
+                <input type="email" id="search_email" name="email" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Buscar Usuario</button>
+        </form>
+        {{end}}
+
+        <p><a href="/usuario">Volver</a></p>
+    </div>
+</body>
+</html>

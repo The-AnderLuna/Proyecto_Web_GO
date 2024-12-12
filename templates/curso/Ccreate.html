@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Curso</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Crear Curso</h1>
+        {{if .Error}}
+            <p class="error">{{.Error}}</p>
+        {{end}}
+        {{if .Message}}
+            <p class="success">{{.Message}}</p>
+        {{end}}
+        <form action="/curso/create" method="post">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" name="descripcion" class="form-control" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="duracion_horas">Duración (Horas):</label>
+                <input type="number" id="duracion_horas" name="duracion_horas" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Crear</button>
+        </form>
+    </div>
+</body>
+</html>
